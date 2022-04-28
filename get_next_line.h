@@ -6,9 +6,28 @@
 /*   By: bderya <bderya@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:24:27 by bderya            #+#    #+#             */
-/*   Updated: 2022/04/19 17:24:28 by bderya           ###   ########.fr       */
+/*   Updated: 2022/04/28 05:34:41 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include <unistd.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
+
+char		*get_next_line(int fd);
+char		*ft_strjoin(char *s1, char *s2);
+char		*ft_strchr(char *s, int c);
+size_t		ft_strlen(char *s);
+char		*read_function(int fd, char *str);
+char		*get_read_line(int fd, char *str);
+char		*get_row(char *string);
+
+#endif

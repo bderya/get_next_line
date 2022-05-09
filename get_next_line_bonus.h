@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bderya <bderya@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:24:27 by bderya            #+#    #+#             */
-/*   Updated: 2022/05/08 18:20:47 by bderya           ###   ########.fr       */
+/*   Updated: 2022/05/08 18:20:24 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <fcntl.h>
 # include <unistd.h>
@@ -28,6 +28,6 @@ char		*ft_strchr(char *s, int c);
 size_t		ft_strlen(char *s);
 char		*get_rest(char	*string);
 char		*get_line(char *string);
-char		*get_read_line(int fd, char *string);
+char		**get_read_line(int fd, char *string);
 
 #endif

@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bderya <bderya@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 22:01:48 by bderya            #+#    #+#             */
-/*   Updated: 2022/05/08 18:18:14 by bderya           ###   ########.fr       */
+/*   Updated: 2022/05/08 15:42:38 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-/**
- * returns the length of string s without null terminator
- */
+
 size_t	ft_strlen(char *s)
 {
 	size_t	i;
@@ -43,9 +41,6 @@ char	*ft_strchr(char *s, int c)
 	}
 	return (0);
 }
-/**
- * concatanates two strings s1 and s2
- */
 
 char	*ft_strjoin(char *s1, char *s2)
 {

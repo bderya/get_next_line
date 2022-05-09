@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bderya <bderya@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 14:42:45 by bderya            #+#    #+#             */
-/*   Updated: 2022/05/08 18:39:18 by bderya           ###   ########.fr       */
+/*   Updated: 2022/05/08 18:37:50 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,16 +92,16 @@ char	*get_rest(char *string)
 
 char	*get_next_line(int fd)
 {
-	static char	*string;
+	static char	*string[1024];
 	char		*line;
 
 	if (read(fd, 0, 0) == -1 || fd < 0 || BUFFER_SIZE <= 0
 		|| (read(fd, 0, 0) == -1))
 		return (0);
-	string = get_read_line(fd, string);
-	if (!string)
+	*(string + fd) = get_read_line(fd, *(string + fd));
+	if (!*(string + fd))
 		return (NULL);
-	line = get_line(string);
-	string = get_rest(string);
+	line = get_line(*(string + fd));
+	*(string + fd) = get_rest(*(string + fd));
 	return (line);
 }
